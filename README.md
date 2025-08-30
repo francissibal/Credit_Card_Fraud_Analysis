@@ -7,6 +7,40 @@ A new credit card company in the western United States wants to establish itself
 ## Visualizations & Key Dashboards
 Below are some of the key visualizations. These charts highlight the primary findings from the exploratory data analysis phase.
 
+# Microsoft Power BI Dashboard:
+Main Dashboard:
+
+![PowerBIPreview1](CreditCardFraud-Dashboard-1.png)
+
+Drill through by State (Fraud Details):
+
+![PowerBIPreview2](CreditCardFraud-Dashboard-2.png)
+
+## Data Analysis & Key Insights
+This analysis covers 1,782 fraudulent transactions totaling $923.19K from 2019-2020, representing an overall fraud rate of 0.52%.
+
+## Demographic and Category Insights
+Most Affected Age Group: Older customers are the primary targets. The 46-60 age group is the most affected (569 transactions), followed closely by the 61+ group (540 transactions).
+
+Top Risk Categories: Online shopping (shopping_net) has the highest fraud rate at 1.44%. This is followed by in-person grocery (grocery_pos) at 1.32% and miscellaneous online transactions (misc_net) at 1.28%.
+
+High-Risk Professions: Cardholders with the job title "Wellsite geologist" were the most targeted, followed by "Occupational therapist".
+
+## Geographic and Merchant Hotspots
+Top State by Fraud Amount: California leads all states in total fraudulent losses with $206K. Missouri ($131K) and Nebraska ($119K) follow.
+
+Top State by Fraud Rate: While California has the highest total loss, Alaska (AK) has the highest proportional risk with a fraud rate of 1.69%.
+
+Drill-Down on California: Within California (the state with the highest total fraud amount):
+
+Top Cities: Glendale, San Diego, and San Jose are the top cities for the number of fraudulent incidents.
+
+Top Merchant: The merchant "Romaguera, Cruickshank and Greenholt" experienced the highest fraud amount.
+
+## Transactional Patterns
+Monthly Trends: Fraudulent transactions fluctuate throughout the year, with a notable peak in March.
+
+Behavioral Pattern: A common fraud signature was identified: transactions are typically for very low monetary amounts but occur at a significant physical distance from the legitimate cardholder's location, indicating card-not-present fraud.
 
 
 ## Question 1  
