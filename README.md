@@ -7,6 +7,8 @@ A new credit card company in the western United States wants to establish itself
 ## Visualizations & Key Dashboards
 Below are some of the key visualizations. These charts highlight the primary findings from the exploratory data analysis phase.
 
+
+
 ## Question 1  
 Returns the Top Category in Fradulent Rate %, Total Transactions, Total Fraud Transactions, Average of Fraud Amount and Legit Amount.
 
@@ -42,7 +44,7 @@ ORDER BY
 ```
 
 ### ✅ Query 1 Result
-```markdown
+
 | Category        | Total Transactions | Fraudulent Transactions  | Fraud Rate (%) | Avg Fraud Amount | Avg Legit Amount |
 |-----------------|--------------------|--------------------------|----------------|------------------|------------------|
 | shopping_net    | 26,379             | 381                      | 1.44           | 1,001.13         | 73.32            |
@@ -59,6 +61,86 @@ ORDER BY
 | food_dining     | 23,038             | 38                       | 0.16           | 117.27           | 50.56            |
 | health_fitness  | 22,593             | 36                       | 0.16           | 20.33            | 54.22            |
 | home            | 32,516             | 50                       | 0.15           | 261.47           | 56.75            |
+
+## Question 2  
+Returns the State, Total Transactions, Fraud Transactions, Fraud Rate (%).
+
+[View SQL File](Queries/Query2)
+
+```sql
+-- Query 2: Fraud Analysis by State
+-- Identifies geographic hotspots for fraudulent activity.
+SELECT
+    state,
+    COUNT(*) as total_transactions,
+    SUM(is_fraud) as fraudulent_transactions,
+    (SUM(is_fraud) / COUNT(*)) * 100 as fraud_rate_percent
+FROM
+    transactions
+GROUP BY
+    state
+ORDER BY
+    fraud_rate_percent DESC;
 ```
+### ✅ Query 2 Result
+| State | Total Transactions | Fraudulent Transactions | Fraud Rate (%) |
+|-------|--------------------|--------------------------|----------------|
+| AK    | 2,963              | 50                       | 1.69           |
+| OR    | 26,408             | 197                      | 0.75           |
+| NE    | 34,425             | 216                      | 0.63           |
+| CO    | 19,766             | 115                      | 0.58           |
+| NM    | 23,427             | 121                      | 0.52           |
+| CA    | 80,495             | 402                      | 0.50           |
+| MO    | 54,904             | 262                      | 0.48           |
+| WA    | 27,040             | 126                      | 0.47           |
+| HI    | 3,649              | 16                       | 0.44           |
+| WY    | 27,776             | 119                      | 0.43           |
+| AZ    | 15,362             | 64                       | 0.42           |
+| ID    | 8,035              | 33                       | 0.41           |
+| UT    | 15,357             | 61                       | 0.40           |
+
+## Question 3  
+Returns the Age Group, Total Transactions, Fraud Transactions, Fraud Rate (%).
+[View SQL File](Queries/Query3)
+```sql
+-- Query 3: Fraud Analysis by Age Group
+-- Determines if certain age groups are more susceptible to fraud.
+WITH CustomerAges AS (
+    SELECT
+        is_fraud,
+        TIMESTAMPDIFF(YEAR, dob, trans_date_trans_time) AS age
+    FROM
+        transactions
+)
+SELECT
+    CASE
+        WHEN age < 26 THEN '18-25'
+        WHEN age BETWEEN 26 AND 35 THEN '26-35'
+        WHEN age BETWEEN 36 AND 45 THEN '36-45'
+        WHEN age BETWEEN 46 AND 60 THEN '46-60'
+        ELSE '61+'
+    END AS age_group,
+    COUNT(*) as total_transactions,
+    SUM(is_fraud) as fraudulent_transactions,
+    (SUM(is_fraud) / COUNT(*)) * 100 as fraud_rate_percent
+FROM
+    CustomerAges
+GROUP BY
+    age_group
+ORDER BY
+    age_group;
+```
+### ✅ Query 3 Result
+| Age Group | Total Transactions | Fraudulent Transactions | Fraud Rate (%) |
+|-----------|--------------------|--------------------------|----------------|
+| 18-25     | 18,840             | 156                      | 0.83           |
+| 26-35     | 80,744             | 306                      | 0.38           |
+| 36-45     | 74,014             | 260                      | 0.35           |
+| 46-60     | 93,119             | 534                      | 0.57           |
+| 61+       | 72,890             | 526                      | 0.72           |
+
+
+
+
 
 
