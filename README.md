@@ -31,7 +31,7 @@ Top State by Fraud Amount: California leads all states in total fraudulent losse
 
 Top State by Fraud Rate: While California has the highest total loss, Alaska (AK) has the highest proportional risk with a fraud rate of 1.69%.
 
-Drill-Down on California: Within California (the state with the highest total fraud amount):
+### Drill-Down on California: Within California (the state with the highest total fraud amount):
 
 Top Cities: Glendale, San Diego, and San Jose are the top cities for the number of fraudulent incidents.
 
