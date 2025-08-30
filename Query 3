@@ -1,0 +1,27 @@
+-- Query 3: Fraud Analysis by Age Group
+-- Determines if certain age groups are more susceptible to fraud.
+WITH CustomerAges AS (
+    SELECT
+        is_fraud,
+        TIMESTAMPDIFF(YEAR, dob, trans_date_trans_time) AS age
+    FROM
+        transactions
+)
+SELECT
+    CASE
+        WHEN age < 26 THEN '18-25'
+        WHEN age BETWEEN 26 AND 35 THEN '26-35'
+        WHEN age BETWEEN 36 AND 45 THEN '36-45'
+        WHEN age BETWEEN 46 AND 60 THEN '46-60'
+        ELSE '61+'
+    END AS age_group,
+    COUNT(*) as total_transactions,
+    SUM(is_fraud) as fraudulent_transactions,
+    (SUM(is_fraud) / COUNT(*)) * 100 as fraud_rate_percent
+FROM
+    CustomerAges
+GROUP BY
+    age_group
+ORDER BY
+    age_group;
+
