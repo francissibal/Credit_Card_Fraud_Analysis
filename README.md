@@ -13,7 +13,7 @@ Below are some of the key visualizations in Microsoft Power BI. These charts hig
 ## Question 1  
 Return the age, total official points, and number of tournaments played for the top 5 tennis players in the world.
 
-📄 [View the SQL query](./Query 1.sql)
+📄 [View the SQL query]
 
 ```sql
 -- Query 1: What types of purchases are most likely to be instances of fraud?
