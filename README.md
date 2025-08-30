@@ -6,3 +6,40 @@ A new credit card company in the western United States wants to establish itself
 
 Visualizations & Key Dashboards
 Below are some of the key visualizations in Microsoft Power BI. These charts highlight the primary findings from the exploratory data analysis phase.
+
+
+# SQL Portfolio
+
+## Question 1  
+Return the age, total official points, and number of tournaments played for the top 5 tennis players in the world.
+
+📄 [View the SQL query](./Query 1.sql)
+
+```sql
+-- Query 1: What types of purchases are most likely to be instances of fraud?
+-- It analyzes fraud rates and average transaction amounts by merchant category.
+
+WITH FraudStats AS (
+    SELECT
+        category,
+        COUNT(*) AS total_transactions,
+        SUM(is_fraud) AS fraudulent_transactions,
+        AVG(CASE WHEN is_fraud = 1 THEN amt ELSE NULL END) as avg_fraud_amount,
+        AVG(CASE WHEN is_fraud = 0 THEN amt ELSE NULL END) as avg_legit_amount
+    FROM
+        transactions
+    GROUP BY
+        category
+)
+SELECT
+    category,
+    total_transactions,
+    fraudulent_transactions,
+    (fraudulent_transactions * 1.0 / total_transactions) * 100 AS fraud_rate_percent,
+    avg_fraud_amount,
+    avg_legit_amount
+FROM
+    FraudStats
+ORDER BY
+    fraud_rate_percent DESC;
+
