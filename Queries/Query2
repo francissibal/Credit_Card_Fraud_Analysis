@@ -1,0 +1,13 @@
+-- Query 2: Fraud Analysis by State
+-- Identifies geographic hotspots for fraudulent activity.
+SELECT
+    state,
+    COUNT(*) as total_transactions,
+    SUM(is_fraud) as fraudulent_transactions,
+    (SUM(is_fraud) / COUNT(*)) * 100 as fraud_rate_percent
+FROM
+    transactions
+GROUP BY
+    state
+ORDER BY
+    fraud_rate_percent DESC;
