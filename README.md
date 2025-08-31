@@ -10,7 +10,7 @@ Below are some of the key visualizations. These charts highlight the primary fin
 ## Microsoft Power BI Dashboard:
 ### Main Dashboard:
 
-![PowerBIPreview1](DashboardPNG\CreditCardFraud-Dashboard-1.png)
+![PowerBIPreview1](CreditCardFraud-Dashboard-1.png)
 
 ## Data Analysis & Key Insights
 This analysis covers 1,782 fraudulent transactions totaling $923.19K from 2019-2020, representing an overall fraud rate of 0.52%.
@@ -26,7 +26,7 @@ Top State by Fraud Rate: While California has the highest total loss, Alaska (AK
 
 ### Drill through by State (Fraud Details):
 
-![PowerBIPreview2](DashboardPNG\CreditCardFraud-Dashboard-1.png)
+![PowerBIPreview2](CreditCardFraud-Dashboard-1.png)
 
 ### Drill-Down on California: Within California (the state with the highest total fraud amount):
 
