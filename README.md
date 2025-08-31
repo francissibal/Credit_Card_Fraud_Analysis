@@ -7,7 +7,7 @@ A new credit card company in the western United States wants to establish itself
 ## Visualizations & Key Dashboards
 Below are some of the key visualizations. These charts highlight the primary findings from the exploratory data analysis phase.
 
-# Microsoft Power BI Dashboard:
+## Microsoft Power BI Dashboard:
 ### Main Dashboard:
 
 ![PowerBIPreview1](CreditCardFraud-Dashboard-1.png)
