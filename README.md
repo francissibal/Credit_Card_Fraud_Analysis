@@ -8,13 +8,9 @@ A new credit card company in the western United States wants to establish itself
 Below are some of the key visualizations. These charts highlight the primary findings from the exploratory data analysis phase.
 
 # Microsoft Power BI Dashboard:
-Main Dashboard:
+### Main Dashboard:
 
 ![PowerBIPreview1](CreditCardFraud-Dashboard-1.png)
-
-Drill through by State (Fraud Details):
-
-![PowerBIPreview2](CreditCardFraud-Dashboard-2.png)
 
 ## Data Analysis & Key Insights
 This analysis covers 1,782 fraudulent transactions totaling $923.19K from 2019-2020, representing an overall fraud rate of 0.52%.
@@ -24,18 +20,21 @@ Most Affected Age Group: Older customers are the primary targets. The 46-60 age 
 
 Top Risk Categories: Online shopping (shopping_net) has the highest fraud rate at 1.44%. This is followed by in-person grocery (grocery_pos) at 1.32% and miscellaneous online transactions (misc_net) at 1.28%.
 
-High-Risk Professions: Cardholders with the job title "Wellsite geologist" were the most targeted, followed by "Occupational therapist".
-
 ## Geographic and Merchant Hotspots
 Top State by Fraud Amount: California leads all states in total fraudulent losses with $206K. Missouri ($131K) and Nebraska ($119K) follow.
-
 Top State by Fraud Rate: While California has the highest total loss, Alaska (AK) has the highest proportional risk with a fraud rate of 1.69%.
+
+### Drill through by State (Fraud Details):
+
+![PowerBIPreview2](CreditCardFraud-Dashboard-2.png)
 
 ### Drill-Down on California: Within California (the state with the highest total fraud amount):
 
 Top Cities: Glendale, San Diego, and San Jose are the top cities for the number of fraudulent incidents.
 
 Top Merchant: The merchant "Romaguera, Cruickshank and Greenholt" experienced the highest fraud amount.
+
+High-Risk Professions: Cardholders with the job title "Wellsite geologist" were the most targeted, followed by "Occupational therapist".
 
 ## Transactional Patterns
 Monthly Trends: Fraudulent transactions fluctuate throughout the year, with a notable peak in March.
@@ -204,40 +203,35 @@ Returns the Age Group, Total Transactions, Fraud Transactions, Fraud Rate (%).
 [View SQL File](Queries/Query3)
 ```sql
 -- Query 3: Fraud Analysis by Age Group
--- Determines if certain age groups are more susceptible to fraud.
-WITH CustomerAges AS (
-    SELECT
-        is_fraud,
-        TIMESTAMPDIFF(YEAR, dob, trans_date_trans_time) AS age
-    FROM
-        transactions
-)
+-- Determines if certain age groups are more susceptible to fraud using the provided age column.
 SELECT
     CASE
-        WHEN age < 26 THEN '18-25'
+        WHEN age BETWEEN 18 AND 25 THEN '18-25'
         WHEN age BETWEEN 26 AND 35 THEN '26-35'
         WHEN age BETWEEN 36 AND 45 THEN '36-45'
         WHEN age BETWEEN 46 AND 60 THEN '46-60'
-        ELSE '61+'
+        WHEN age >= 61 THEN '61+'
+        ELSE 'Under 18'
     END AS age_group,
     COUNT(*) as total_transactions,
     SUM(is_fraud) as fraudulent_transactions,
-    (SUM(is_fraud) / COUNT(*)) * 100 as fraud_rate_percent
+    (SUM(is_fraud) * 1.0 / COUNT(*)) * 100 as fraud_rate_percent
 FROM
-    CustomerAges
+    transactions -- Use the 'transactions' table directly
 GROUP BY
     age_group
 ORDER BY
     age_group;
 ```
 ### ✅ Query 3 Result
-| Age Group | Total Transactions | Fraudulent Transactions | Fraud Rate (%) |
-|-----------|--------------------|--------------------------|----------------|
-| 18-25     | 18,840             | 156                      | 0.83           |
-| 26-35     | 80,744             | 306                      | 0.38           |
-| 36-45     | 74,014             | 260                      | 0.35           |
-| 46-60     | 93,119             | 534                      | 0.57           |
-| 61+       | 72,890             | 526                      | 0.72           |
+| age_group | total_transactions | fraudulent_transactions | fraud_rate_percent |
+|-----------|--------------------|--------------------------|--------------------|
+| 18-25     | 17,622             | 149                      | 0.84553            |
+| 26-35     | 73,100             | 283                      | 0.38714            |
+| 36-45     | 68,678             | 241                      | 0.35091            |
+| 46-60     | 101,763            | 569                      | 0.55914            |
+| 61+       | 78,444             | 540                      | 0.68839            |
+
 
 
 
