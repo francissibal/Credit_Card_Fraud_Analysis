@@ -15,7 +15,7 @@ The primary objective of this project is to:
 Below are some of the key visualizations. These charts highlight the primary findings from the exploratory data analysis phase.
 
 ### Microsoft Power BI Dashboard:
-### Main Dashboard:
+#### Main Dashboard:
 
 ![PowerBIPreview1](CreditCardFraud-Dashboard-1.png)
 
@@ -41,7 +41,7 @@ Top Categories by Fraud Rate: Online transactions carry more than double the fra
 * Gas/Transport: 0.44%
 
 ### Geographic and Merchant Hotspots
-Top State by Fraud Amount: California leads all states in total fraudulent losses with $206K. While California records the highest total fraud losses ($206K), Alaska has the highest proportional risk, with a fraud rate of 1.69% despite its smaller transaction volume.
+California leads all states in total fraudulent losses with $206K. While California records the highest total fraud losses ($206K), Alaska has the highest proportional risk, with a fraud rate of 1.69% despite its smaller transaction volume.
 
 Top State by Fraud Amount
 * California → $206K (402 fraud cases out of 80,495 transactions)
@@ -53,7 +53,7 @@ Top States by Fraud Rate (%)
 * Oregon → 0.75% fraud rate (197 fraud cases out of 26,408 transactions)
 * Nebraska → 0.63% fraud rate (216 fraud cases out of 34,425 transactions)
 
-### Drill through by State (Fraud Details):
+#### Drill through by State (Fraud Details):
 
 ![PowerBIPreview2](CreditCardFraud-Dashboard-2.png)
 
@@ -71,7 +71,7 @@ Monthly Trends: Fraudulent transactions fluctuate throughout the year, with nota
 Behavioral Pattern: A common fraud signature was identified: Many fraudulent charges are low-value transactions but occur at unusual distances from the cardholder’s normal location. This suggests card-not-present fraud or account takeover activity, where stolen credentials are first tested with small purchases before larger fraudulent attempts.
 
 
-## Question 1  
+## Query 1: Fraud Risk by Purchase Category 
 Returns the Top Category in Fradulent Rate %, Total Transactions, Total Fraud Transactions, Average of Fraud Amount and Legit Amount.
 
 [View SQL File](Queries/Query1)
@@ -126,7 +126,7 @@ Insight:
 | health_fitness  | 22,593             | 36                       | 0.16           | 20.33            | 54.22            |
 | home            | 32,516             | 50                       | 0.15           | 261.47           | 56.75            |
 
-## Question 2  
+## Query 2: Fraud Analysis by State  
 Returns the State, Total Transactions, Fraud Transactions, Fraud Rate (%).
 
 [View SQL File](Queries/Query2)
@@ -166,7 +166,7 @@ Insight:
 | ID    | 8,035              | 33                       | 0.41           |
 | UT    | 15,357             | 61                       | 0.40           |
 
-## Question 3  
+## Query 3: Fraud Analysis by Age Group
 Returns the Age Group, Total Transactions, Fraud Transactions, Fraud Rate (%).
 
 [View SQL File](Queries/Query3)
