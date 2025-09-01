@@ -5,16 +5,18 @@ This repository contains the end-to-end analysis of a credit card transaction da
 A new credit card company in the western United States wants to establish itself as a market leader in fraud prevention and security.
 
 The primary objective of this project is to:
-
 * Analyze transaction patterns to uncover fraud risks.
-
 * Build a predictive model that prioritizes high recall (catching as many fraudulent cases as possible), even if this results in some false positives.
-
 * Provide data-driven recommendations to strengthen fraud detection.
-## Visualizations & Key Dashboards
-Below are some of the key visualizations. These charts highlight the primary findings from the exploratory data analysis phase.
 
-### Microsoft Power BI Dashboard:
+## Visualizations & Key Dashboards
+Below are some of the key visualizations created in Power BI. These charts highlight the primary findings from the exploratory data analysis phase.
+* National fraud overview
+* Fraud by category and age group
+* Fraud by state and drill-down analysis (California)
+* Merchant and profession-level insights
+
+### Microsoft Power BI Dashboard
 #### Main Dashboard:
 
 ![PowerBIPreview1](CreditCardFraud-Dashboard-1.png)
@@ -25,8 +27,6 @@ Even though fraud makes up less than 1% of transactions, the financial impact is
 * Total Fraudulent Transactions: 1,782
 * Total Fraudulent Amount: $923,190
 * Fraudulent Rate: 0.52% of all transactions
-
-
 
 ### Demographic and Category Insights
 Most Affected Age Groups: These groups represent the majority of fraudulent activity, highlighting older customers as prime targets.
@@ -70,6 +70,13 @@ Monthly Trends: Fraudulent transactions fluctuate throughout the year, with nota
 
 Behavioral Pattern: A common fraud signature was identified: Many fraudulent charges are low-value transactions but occur at unusual distances from the cardholder’s normal location. This suggests card-not-present fraud or account takeover activity, where stolen credentials are first tested with small purchases before larger fraudulent attempts.
 
+### Recommendations
+Based on the analysis, the following actions are recommended:
+* Strengthen fraud detection in online transactions, especially shopping_net and misc_net.
+* Prioritize monitoring in high-loss states such as California, Missouri, and Nebraska.
+* Target awareness campaigns for older customers (46+) who are disproportionately affected.
+* Collaborate with merchants frequently linked to fraud to tighten verification measures.
+* Enhance geolocation-based anomaly detection to catch suspicious local fraud attempts.
 
 ## Query 1: Fraud Risk by Purchase Category 
 Returns the Top Category in Fradulent Rate %, Total Transactions, Total Fraud Transactions, Average of Fraud Amount and Legit Amount.
