@@ -41,11 +41,17 @@ Top Categories by Fraud Rate: Online transactions carry more than double the fra
 * Gas/Transport: 0.44%
 
 ### Geographic and Merchant Hotspots
-Top State by Fraud Amount: California leads all states in total fraudulent losses with $206K.
-* California → $206K
-* Missouri → $131K
-* Nebraska → $119K
-* Oregon → $103K
+Top State by Fraud Amount: California leads all states in total fraudulent losses with $206K. While California records the highest total fraud losses ($206K), Alaska has the highest proportional risk, with a fraud rate of 1.69% despite its smaller transaction volume.
+
+Top State by Fraud Amount
+* California → $206K (402 fraud cases out of 80,495 transactions)
+* Missouri → $131K (262 fraud cases out of 54,904 transactions)
+* Nebraska → $119K (216 fraud cases out of 34,425 transactions)
+
+Top States by Fraud Rate (%)
+* Alaska → 1.69% fraud rate (50 fraud cases out of 2,963 transactions)
+* Oregon → 0.75% fraud rate (197 fraud cases out of 26,408 transactions)
+* Nebraska → 0.63% fraud rate (216 fraud cases out of 34,425 transactions)
 
 ### Drill through by State (Fraud Details):
 
@@ -71,9 +77,9 @@ Returns the Top Category in Fradulent Rate %, Total Transactions, Total Fraud Tr
 [View SQL File](Queries/Query1)
 
 ```sql
--- Query 1: What types of purchases are most likely to be instances of fraud?
--- It analyzes fraud rates and average transaction amounts by merchant category.
-
+-- Query 1: Fraud Risk by Purchase Category
+-- Objective: Identify which transaction categories carry the highest fraud risk. 
+-- This helps prioritize fraud detection efforts for online vs in-person purchases.
 WITH FraudStats AS (
     SELECT
         category,
@@ -100,6 +106,8 @@ ORDER BY
 ```
 
 ### ✅ Query 1 Result
+Insight:
+“Online shopping transactions (shopping_net) show the highest fraud rate at 1.44%, which is more than double the in-store rate (shopping_pos at 0.62%). Fraudulent online purchases also average $1,001, significantly higher than the average legitimate online purchase ($73). This highlights online transactions as a major fraud vector.”
 
 | Category        | Total Transactions | Fraudulent Transactions  | Fraud Rate (%) | Avg Fraud Amount | Avg Legit Amount |
 |-----------------|--------------------|--------------------------|----------------|------------------|------------------|
@@ -139,6 +147,9 @@ ORDER BY
     fraud_rate_percent DESC;
 ```
 ### ✅ Query 2 Result
+Insight:
+"While California records the highest total fraud losses ($206K), Alaska has the highest proportional risk, with a fraud rate of 1.69% despite its smaller transaction volume."
+
 | State | Total Transactions | Fraudulent Transactions | Fraud Rate (%) |
 |-------|--------------------|--------------------------|----------------|
 | AK    | 2,963              | 50                       | 1.69           |
@@ -157,6 +168,7 @@ ORDER BY
 
 ## Question 3  
 Returns the Age Group, Total Transactions, Fraud Transactions, Fraud Rate (%).
+
 [View SQL File](Queries/Query3)
 ```sql
 -- Query 3: Fraud Analysis by Age Group
@@ -181,6 +193,9 @@ ORDER BY
     age_group;
 ```
 ### ✅ Query 3 Result
+Insight:
+“Older customers (46+) not only account for the majority of fraudulent transactions (1,109 cases), but they also show higher fraud rates (0.56–0.69%) compared to younger groups (0.35–0.38%). This suggests fraudsters disproportionately target older cardholders, making them an important focus for prevention and awareness campaigns.”
+
 | age_group | total_transactions | fraudulent_transactions | fraud_rate_percent |
 |-----------|--------------------|--------------------------|--------------------|
 | 18-25     | 17,622             | 149                      | 0.84553            |
