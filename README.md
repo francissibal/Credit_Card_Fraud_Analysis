@@ -1,45 +1,68 @@
 # Credit Card Fraud Detection Analysis (2019-2020)
-This repository contains the end-to-end analysis of a credit card transaction dataset to identify and predict instances of fraud. The project involves exploratory data analysis using SQL, Python and Microsoft Power BI.
+This repository contains the end-to-end analysis of a credit card transaction dataset to identify and predict instances of fraud. The project combines SQL, and Microsoft Power BI for exploratory data analysis and visualization, with a focus on understanding fraud risk patterns and informing fraud prevention strategies.
 
 ## Project Overview & Objective
-A new credit card company in the western United States wants to establish itself as a market leader in security. The primary objective is to build a predictive model that can accurately identify fraudulent transactions from a provided dataset. A key requirement is that the model should prioritize catching as many fraudulent cases as possible (high recall), even if it means occasionally flagging a legitimate transaction for review.
+A new credit card company in the western United States wants to establish itself as a market leader in fraud prevention and security.
 
+The primary objective of this project is to:
+
+* Analyze transaction patterns to uncover fraud risks.
+
+* Build a predictive model that prioritizes high recall (catching as many fraudulent cases as possible), even if this results in some false positives.
+
+* Provide data-driven recommendations to strengthen fraud detection.
 ## Visualizations & Key Dashboards
 Below are some of the key visualizations. These charts highlight the primary findings from the exploratory data analysis phase.
 
-## Microsoft Power BI Dashboard:
+### Microsoft Power BI Dashboard:
 ### Main Dashboard:
 
 ![PowerBIPreview1](CreditCardFraud-Dashboard-1.png)
 
-## Data Analysis & Key Insights
-This analysis covers 1,782 fraudulent transactions totaling $923.19K from 2019-2020, representing an overall fraud rate of 0.52%.
+### Data Analysis & Key Insights
+Even though fraud makes up less than 1% of transactions, the financial impact is significant.
 
-## Demographic and Category Insights
-Most Affected Age Group: Older customers are the primary targets. The 46-60 age group is the most affected (569 transactions), followed closely by the 61+ group (540 transactions).
+* Total Fraudulent Transactions: 1,782
+* Total Fraudulent Amount: $923,190
+* Fraudulent Rate: 0.52% of all transactions
 
-Top Risk Categories: Online shopping (shopping_net) has the highest fraud rate at 1.44%. This is followed by in-person grocery (grocery_pos) at 1.32% and miscellaneous online transactions (misc_net) at 1.28%.
 
-## Geographic and Merchant Hotspots
-Top State by Fraud Amount: California leads all states in total fraudulent losses with $206K. Missouri ($131K) and Nebraska ($119K) follow.
-Top State by Fraud Rate: While California has the highest total loss, Alaska (AK) has the highest proportional risk with a fraud rate of 1.69%.
+
+### Demographic and Category Insights
+Most Affected Age Groups: These groups represent the majority of fraudulent activity, highlighting older customers as prime targets.
+* 46–60 years → 569 fraudulent transactions
+* 61+ years → 540 fraudulent transactions
+
+Top Categories by Fraud Rate: Online transactions carry more than double the fraud rate of in-store transactions.
+* Online Shopping (shopping_net): 1.44%
+* Grocery POS: 1.32%
+* Miscellaneous Online (misc_net): 1.28%
+* In-store Shopping POS: 0.62%
+* Gas/Transport: 0.44%
+
+### Geographic and Merchant Hotspots
+Top State by Fraud Amount: California leads all states in total fraudulent losses with $206K.
+* California → $206K
+* Missouri → $131K
+* Nebraska → $119K
+* Oregon → $103K
 
 ### Drill through by State (Fraud Details):
 
-![PowerBIPreview2](CreditCardFraud-Dashboard-1.png)
+![PowerBIPreview2](CreditCardFraud-Dashboard-2.png)
 
-### Drill-Down on California: Within California (the state with the highest total fraud amount):
+### Drill-Through on California: Within California (the state with the highest total fraud amount):
 
 Top Cities: Glendale, San Diego, and San Jose are the top cities for the number of fraudulent incidents.
 
-Top Merchant: The merchant "Romaguera, Cruickshank and Greenholt" experienced the highest fraud amount.
+Top Merchant Exposure: The merchant “Romaguera, Cruickshank and Greenholt” had the highest exposure to fraudulent transactions, with $6.7K in disputed charges. This indicates a fraud hotspot where prevention measures could be strengthened.
 
-High-Risk Professions: Cardholders with the job title "Wellsite geologist" were the most targeted, followed by "Occupational therapist".
+High-Risk Professions: Legitimate cardholders in specialized professions such as Wellsite Geologist and Occupational Therapist were disproportionately targeted, suggesting fraudsters may focus on groups with higher incomes or specific spending patterns.
 
-## Transactional Patterns
-Monthly Trends: Fraudulent transactions fluctuate throughout the year, with a notable peak in March.
+### Transactional Patterns
+Monthly Trends: Fraudulent transactions fluctuate throughout the year, with notable peaks in March, May, and October.
 
-Behavioral Pattern: A common fraud signature was identified: transactions are typically for very low monetary amounts but occur at a significant physical distance from the legitimate cardholder's location, indicating card-not-present fraud.
+Behavioral Pattern: A common fraud signature was identified: Many fraudulent charges are low-value transactions but occur at unusual distances from the cardholder’s normal location. This suggests card-not-present fraud or account takeover activity, where stolen credentials are first tested with small purchases before larger fraudulent attempts.
 
 
 ## Question 1  
