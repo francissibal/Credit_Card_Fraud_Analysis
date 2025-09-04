@@ -29,11 +29,11 @@ Even though fraud makes up less than 1% of transactions, the financial impact is
 * Fraudulent Rate: 0.52% of all transactions
 
 ### Demographic and Category Insights
-Most Affected Age Groups: These groups represent the majority of fraudulent activity, highlighting older customers as prime targets.
+**Most Affected Age Groups:** These groups represent the majority of fraudulent activity, highlighting older customers as prime targets.
 * 46–60 years → 569 fraudulent transactions
 * 61+ years → 540 fraudulent transactions
 
-Top Categories by Fraud Rate: Online transactions carry more than double the fraud rate of in-store transactions.
+**Top Categories by Fraud Rate:** Online transactions carry more than double the fraud rate of in-store transactions.
 * Online Shopping (shopping_net): 1.44%
 * Grocery POS: 1.32%
 * Miscellaneous Online (misc_net): 1.28%
@@ -43,12 +43,12 @@ Top Categories by Fraud Rate: Online transactions carry more than double the fra
 ### Geographic and Merchant Hotspots
 California leads all states in total fraudulent losses with $206K. While California records the highest total fraud losses ($206K), Alaska has the highest proportional risk, with a fraud rate of 1.69% despite its smaller transaction volume.
 
-Top State by Fraud Amount
+**Top State by Fraud Amount**
 * California → $206K (402 fraud cases out of 80,495 transactions)
 * Missouri → $131K (262 fraud cases out of 54,904 transactions)
 * Nebraska → $119K (216 fraud cases out of 34,425 transactions)
 
-Top States by Fraud Rate (%)
+**Top States by Fraud Rate (%)**
 * Alaska → 1.69% fraud rate (50 fraud cases out of 2,963 transactions)
 * Oregon → 0.75% fraud rate (197 fraud cases out of 26,408 transactions)
 * Nebraska → 0.63% fraud rate (216 fraud cases out of 34,425 transactions)
@@ -59,16 +59,16 @@ Top States by Fraud Rate (%)
 
 ### Drill-Through on California: Within California (the state with the highest total fraud amount):
 
-Top Cities: Glendale, San Diego, and San Jose are the top cities for the number of fraudulent incidents.
+**Top Cities:** Glendale, San Diego, and San Jose are the top cities for the number of fraudulent incidents.
 
-Top Merchant Exposure: The merchant “Romaguera, Cruickshank and Greenholt” had the highest exposure to fraudulent transactions, with $6.7K in disputed charges. This indicates a fraud hotspot where prevention measures could be strengthened.
+**Top Merchant Exposure:** The merchant “Romaguera, Cruickshank and Greenholt” had the highest exposure to fraudulent transactions, with $6.7K in disputed charges. This indicates a fraud hotspot where prevention measures could be strengthened.
 
-High-Risk Professions: Legitimate cardholders in specialized professions such as Wellsite Geologist and Occupational Therapist were disproportionately targeted, suggesting fraudsters may focus on groups with higher incomes or specific spending patterns.
+**High-Risk Professions:** Cardholders in specialized professions such as Wellsite Geologist and Occupational Therapist were disproportionately targeted, suggesting fraudsters may focus on groups with higher incomes or specific spending patterns.
 
 ### Transactional Patterns
-Monthly Trends: Fraudulent transactions fluctuate throughout the year, with notable peaks in March, May, and October.
+**Monthly Trends:** Fraudulent transactions fluctuate throughout the year, with notable peaks in March, May, and October.
 
-Behavioral Pattern: A common fraud signature was identified: Many fraudulent charges are low-value transactions but occur at unusual distances from the cardholder’s normal location. This suggests card-not-present fraud or account takeover activity, where stolen credentials are first tested with small purchases before larger fraudulent attempts.
+**Behavioral Pattern:** A common fraud signature was identified: Many fraudulent charges are low-value transactions but occur at unusual distances from the cardholder’s normal location. This suggests card-not-present fraud or account takeover activity, where stolen credentials are first tested with small purchases before larger fraudulent attempts.
 
 ### Recommendations
 Based on the analysis, the following actions are recommended:
