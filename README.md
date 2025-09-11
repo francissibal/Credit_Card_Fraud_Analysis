@@ -1,15 +1,56 @@
 # Credit Card Fraud Detection Analysis (2019-2020)
 This repository contains the end-to-end analysis of a credit card transaction dataset to identify and predict instances of fraud. The project combines SQL, and Microsoft Power BI for exploratory data analysis and visualization, with a focus on understanding fraud risk patterns and informing fraud prevention strategies.
 
+
+
+
+
+
 # Business Problem
 A new credit card company entering the competitive western United States market faces a dual threat: the immediate financial losses from fraudulent transactions and the long-term reputational damage that erodes customer trust. Without a robust, data-driven fraud detection system, the company risks significant revenue leakage and struggles to establish itself as a secure and reliable choice for consumers. The core business problem is the need to proactively identify and mitigate fraud to ensure financial stability, protect customers, and build a strong brand foundation centered on security.
 
+
+
+
+
+
 # Executive Summary
-This report details the analysis of credit card transactions from 2019-2020 to identify key fraud patterns and inform prevention strategies for a new credit card company. Although fraudulent transactions constitute just 0.52% of the total volume, they account for over $923,000 in losses, highlighting a significant financial risk.
+This report provides a detailed analysis of credit card fraud patterns, revealing that while fraudulent transactions constitute only 0.52% of total volume, they have resulted in $923,190 in financial losses.
 
 The analysis revealed that fraud disproportionately targets older customers (ages 46+) and occurs most frequently in online shopping transactions, which have a fraud rate more than double that of in-store purchases. Geographically, California represents the largest total loss at $206K, while Alaska shows the highest proportional risk with a 1.69% fraud rate. A key behavioral pattern identified was the use of low-value transactions at unusual distances to test stolen card details.
 
-Key recommendations include strengthening monitoring of online channels, implementing targeted security alerts for older demographics, enhancing geolocation-based anomaly detection, and collaborating with high-risk merchants to improve transaction verification.
+Based on these findings, we recommend immediate action to strengthen online transaction monitoring protocols, launch targeted security awareness campaigns for older customers, and implement enhanced verification measures in high-risk states and with specific merchants. These actions will significantly reduce financial exposure and enhance the security of our platform.
+
+
+
+
+
+
+# Summary of Key Findings
+**Overall Financial Impact:**
+
+* Total Fraudulent Transactions: 1,782
+
+* Total Financial Loss: $923,190
+
+* Fraud Rate (by volume): 0.52%
+
+**Most Vulnerable Spending Categories (by Fraud Rate):**
+
+* Online Shopping (shopping_net): 1.44%
+
+* Grocery Point-of-Sale (grocery_pos): 1.32%
+
+* Miscellaneous Online (misc_net): 1.28%
+
+**Most Affected Customer Demographics (by Transaction Count):**
+
+* Age Group 46–60: 569 fraudulent transactions
+
+* Age Group 61+: 540 fraudulent transactions
+
+
+
 
 ## Project Overview & Objective
 A new credit card company in the western United States wants to establish itself as a market leader in fraud prevention and security.
@@ -19,6 +60,11 @@ The primary objective of this project is to:
 * Build a predictive model that prioritizes high recall (catching as many fraudulent cases as possible), even if this results in some false positives.
 * Provide data-driven recommendations to strengthen fraud detection.
 
+
+
+
+
+
 ## Visualizations & Key Dashboards
 Below are some of the key visualizations created in Power BI. These charts highlight the primary findings from the exploratory data analysis phase.
 * National fraud overview
@@ -26,10 +72,20 @@ Below are some of the key visualizations created in Power BI. These charts highl
 * Fraud by state and drill-down analysis (California)
 * Merchant and profession-level insights
 
+
+
+
+
+
 ### Microsoft Power BI Dashboard
 #### Main Dashboard:
 
 ![PowerBIPreview1](CreditCardFraud-Dashboard-1.png)
+
+
+
+
+
 
 ### Data Analysis & Key Insights
 Even though fraud makes up less than 1% of transactions, the financial impact is significant.
@@ -38,10 +94,20 @@ Even though fraud makes up less than 1% of transactions, the financial impact is
 * Total Fraudulent Amount: $923,190
 * Fraudulent Rate: 0.52% of all transactions
 
+
+
+
+
+
 ### Demographic and Category Insights
 **Most Affected Age Groups:** These groups represent the majority of fraudulent activity, highlighting older customers as prime targets.
 * 46–60 years → 569 fraudulent transactions
 * 61+ years → 540 fraudulent transactions
+
+
+
+
+
 
 **Top Categories by Fraud Rate:** Online transactions carry more than double the fraud rate of in-store transactions.
 * Online Shopping (shopping_net): 1.44%
@@ -50,22 +116,47 @@ Even though fraud makes up less than 1% of transactions, the financial impact is
 * In-store Shopping POS: 0.62%
 * Gas/Transport: 0.44%
 
+
+
+
+
+
 ### Geographic and Merchant Hotspots
 California leads all states in total fraudulent losses with $206K. While California records the highest total fraud losses ($206K), Alaska has the highest proportional risk, with a fraud rate of 1.69% despite its smaller transaction volume.
+
+
+
+
+
 
 **Top State by Fraud Amount**
 * California → $206K (402 fraud cases out of 80,495 transactions)
 * Missouri → $131K (262 fraud cases out of 54,904 transactions)
 * Nebraska → $119K (216 fraud cases out of 34,425 transactions)
 
+
+
+
+
+
 **Top States by Fraud Rate (%)**
 * Alaska → 1.69% fraud rate (50 fraud cases out of 2,963 transactions)
 * Oregon → 0.75% fraud rate (197 fraud cases out of 26,408 transactions)
 * Nebraska → 0.63% fraud rate (216 fraud cases out of 34,425 transactions)
 
+
+
+
+
+
 #### Drill through by State (Fraud Details):
 
 ![PowerBIPreview2](CreditCardFraud-Dashboard-2.png)
+
+
+
+
+
 
 ### Drill-Down on California: Within California (the state with the highest total fraud amount):
 
@@ -75,10 +166,20 @@ California leads all states in total fraudulent losses with $206K. While Califor
 
 **High-Risk Professions:** Cardholders in specialized professions such as Wellsite Geologist and Occupational Therapist were disproportionately targeted, suggesting fraudsters may focus on groups with higher incomes or specific spending patterns.
 
+
+
+
+
+
 ### Transactional Patterns
 **Monthly Trends:** Fraudulent transactions fluctuate throughout the year, with notable peaks in March, May, and October.
 
 **Behavioral Pattern:** A common fraud signature was identified: Many fraudulent charges are low-value transactions but occur at unusual distances from the cardholder’s normal location. This suggests card-not-present fraud or account takeover activity, where stolen credentials are first tested with small purchases before larger fraudulent attempts.
+
+
+
+
+
 
 ### Recommendations
 Based on the analysis, the following actions are recommended:
@@ -87,6 +188,11 @@ Based on the analysis, the following actions are recommended:
 * Target awareness campaigns for older customers (46+) who are disproportionately affected.
 * Collaborate with merchants frequently linked to fraud to tighten verification measures.
 * Enhance geolocation-based anomaly detection to catch suspicious local fraud attempts.
+
+
+
+
+
 
 ## Query 1: Fraud Risk by Purchase Category 
 Returns the Top Category in Fradulent Rate %, Total Transactions, Total Fraud Transactions, Average of Fraud Amount and Legit Amount.
@@ -143,6 +249,11 @@ Insight:
 | health_fitness  | 22,593             | 36                       | 0.16           | 20.33            | 54.22            |
 | home            | 32,516             | 50                       | 0.15           | 261.47           | 56.75            |
 
+
+
+
+
+
 ## Query 2: Fraud Analysis by State  
 Returns the State, Total Transactions, Fraud Transactions, Fraud Rate (%).
 
@@ -183,6 +294,11 @@ Insight:
 | ID    | 8,035              | 33                       | 0.41           |
 | UT    | 15,357             | 61                       | 0.40           |
 
+
+
+
+
+
 ## Query 3: Fraud Analysis by Age Group
 Returns the Age Group, Total Transactions, Fraud Transactions, Fraud Rate (%).
 
@@ -220,10 +336,4 @@ Insight:
 | 36-45     | 68,678             | 241                      | 0.35091            |
 | 46-60     | 101,763            | 569                      | 0.55914            |
 | 61+       | 78,444             | 540                      | 0.68839            |
-
-
-
-
-
-
 
