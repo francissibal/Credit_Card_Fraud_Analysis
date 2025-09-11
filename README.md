@@ -1,6 +1,16 @@
 # Credit Card Fraud Detection Analysis (2019-2020)
 This repository contains the end-to-end analysis of a credit card transaction dataset to identify and predict instances of fraud. The project combines SQL, and Microsoft Power BI for exploratory data analysis and visualization, with a focus on understanding fraud risk patterns and informing fraud prevention strategies.
 
+# Business Problem
+A new credit card company entering the competitive western United States market faces a dual threat: the immediate financial losses from fraudulent transactions and the long-term reputational damage that erodes customer trust. Without a robust, data-driven fraud detection system, the company risks significant revenue leakage and struggles to establish itself as a secure and reliable choice for consumers. The core business problem is the need to proactively identify and mitigate fraud to ensure financial stability, protect customers, and build a strong brand foundation centered on security.
+
+# Executive Summary
+This report details the analysis of credit card transactions from 2019-2020 to identify key fraud patterns and inform prevention strategies for a new credit card company. Although fraudulent transactions constitute just 0.52% of the total volume, they account for over $923,000 in losses, highlighting a significant financial risk.
+
+The analysis revealed that fraud disproportionately targets older customers (ages 46+) and occurs most frequently in online shopping transactions, which have a fraud rate more than double that of in-store purchases. Geographically, California represents the largest total loss at $206K, while Alaska shows the highest proportional risk with a 1.69% fraud rate. A key behavioral pattern identified was the use of low-value transactions at unusual distances to test stolen card details.
+
+Key recommendations include strengthening monitoring of online channels, implementing targeted security alerts for older demographics, enhancing geolocation-based anomaly detection, and collaborating with high-risk merchants to improve transaction verification.
+
 ## Project Overview & Objective
 A new credit card company in the western United States wants to establish itself as a market leader in fraud prevention and security.
 
@@ -57,7 +67,7 @@ California leads all states in total fraudulent losses with $206K. While Califor
 
 ![PowerBIPreview2](CreditCardFraud-Dashboard-2.png)
 
-### Drill-Through on California: Within California (the state with the highest total fraud amount):
+### Drill-Down on California: Within California (the state with the highest total fraud amount):
 
 **Top Cities:** Glendale, San Diego, and San Jose are the top cities for the number of fraudulent incidents.
 
